@@ -1,0 +1,109 @@
+body {
+  margin: 0px;
+}
+
+a:link {
+  text-decoration: none;
+  font-size: 100%;
+  color: #666666;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: none;
+  font-weight: bold;
+  color: #CCA300;
+}
+
+a.active {
+  text-decoration: none;
+  font-weight: bold;
+  color: #CCA300;
+}
+
+p.header {
+  font-size: 200%;
+}
+
+#runForm {
+
+}
+
+#window {
+  border-collapse: collapse;
+}
+
+#menu-alias {
+  display: none;
+  height: 80px;
+}
+
+#runmenu {
+  background-color: #201F25;
+  color: #FFFFFF;
+  padding: 6px;
+}
+
+#archive-link {
+  color: #CCA300;
+}
+
+#submenu {
+  background-color: #D6E3F2;
+  text-align: center;
+}
+
+#submenuBorder {
+  background-color: #C1CCDA;
+  height:1px;
+}
+
+#content-window {
+  text-align: center;
+}
+
+#content-table {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#empty-spacer {
+  width: 6px;
+  padding: 0;
+  border: none;
+  background: #FFFFFF;
+}
+
+#compare-spacer {
+  width: 3px;
+  padding: 0;
+  border: none;
+  background: #b4b4b4;
+}
+
+#left-compare {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#right-compare {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#plot {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}

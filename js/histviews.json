@@ -1,0 +1,569 @@
+var pageData = {
+  "Summary": {
+    "title" : "Summary",
+    "content" : ""
+  },
+  "Occupancies" : {
+    "title" : "Occupancy Plots",
+    "content" : {
+      "labels" : [
+        "(1 entry per event per chamber with 1 or more wire digi/hit/segment)",
+        "",
+        ""
+      ],
+      "plots" : [
+        [
+          "hOStrips",
+          "hOWires",
+          "hORecHits",
+          "hOSegments"
+        ],
+        [
+          "hltTriggerBits"
+        ],
+        [
+          "CSCOccupancy"
+        ]
+      ],
+      "columns" : [
+        2,
+        1,
+        1
+      ]
+    }
+  },
+  "Multiplicity" : {
+    "title" : "Multiplicity",
+    "content" : {
+      "labels" : [
+        "(Number of Local Reco Objects / Event)"
+      ],
+      "plots" : [
+        [
+          "Digis_hStripNFired",
+          "Digis_hWirenGroupsTotal",
+          "recHits_hRHnrechits",
+          "Segments_hSnSegments"
+        ]
+      ],
+      "columns" : [
+        2
+      ]
+    }
+  },
+  "recHitXY" : {
+    "title" : "recHit Global Positions",
+    "content" : {
+      "labels" : [
+        ""
+      ],
+      "plots" : [
+        [
+          "rHglobal_station_+1",
+          "rHglobal_station_+2",
+          "rHglobal_station_+3",
+          "rHglobal_station_+4",
+          "rHglobal_station_-1",
+          "rHglobal_station_-2",
+          "rHglobal_station_-3",
+          "rHglobal_station_-4"
+        ]
+      ],
+      "columns" : [
+        4
+      ]
+    }
+  },
+  "segXY" : {
+    "title" : "Segment Global Positions",
+    "content" : {
+      "labels" : [
+        ""
+      ],
+      "plots" : [
+        [
+          "Sglobal_station_+1",
+          "Sglobal_station_+2",
+          "Sglobal_station_+3",
+          "Sglobal_station_+4",
+          "Sglobal_station_-1",
+          "Sglobal_station_-2",
+          "Sglobal_station_-3",
+          "Sglobal_station_-4"
+        ]
+      ],
+      "columns" : [
+        4
+      ]
+    }
+  },
+  "Efficiencies" : {
+    "title" : "Efficiencies",
+    "content" : {
+      "labels" : [
+        "Efficiencies Based on Extrapolated Segments","Rechit: Given a segment, rechits in each layer?<br>Segment: Given rechits in 2 or more layers, is a segment reconstructed?"
+      ],
+      "plots" : [
+        [
+          "Efficiency_hStripEff2",
+          "Efficiency_hWireEff2",
+          "Efficiency_hRHEff2",
+          "Efficiency_hSEff2"
+        ],
+        [
+          "Efficiency_hRHEff",
+          "Efficiency_hSEff"
+        ]
+      ],
+      "columns" : [
+        2,
+        2
+      ]
+    }
+  },
+  "Resolution" : {
+    "title" : "Resolution",
+    "content" : {
+      "labels" : [
+        "Residuals in Layer 3, based on a fit to the other 5 layers (left).<br>Reconstructed Position on Strip (left).<br>Units are Strip Widths."
+      ],
+      "plots" : [
+        [
+          "Resolution_hSResid+11",
+          "recHits_hRHstpos+11",
+          "Resolution_hSResid+11a",
+          "recHits_hRHstpos+11a",
+          "Resolution_hSResid+12",
+          "recHits_hRHstpos+12",
+          "Resolution_hSResid+13",
+          "recHits_hRHstpos+13",
+          "Resolution_hSResid+21",
+          "recHits_hRHstpos+21",
+          "Resolution_hSResid+22",
+          "recHits_hRHstpos+22",
+          "Resolution_hSResid+31",
+          "recHits_hRHstpos+31",
+          "Resolution_hSResid+32",
+          "recHits_hRHstpos+32",
+          "Resolution_hSResid+41",
+          "recHits_hRHstpos+41",
+          "Resolution_hSResid+42",
+          "recHits_hRHstpos+42",
+          "Resolution_hSResid-11",
+          "recHits_hRHstpos-11",
+          "Resolution_hSResid-11a",
+          "recHits_hRHstpos-11a",
+          "Resolution_hSResid-12",
+          "recHits_hRHstpos-12",
+          "Resolution_hSResid-13",
+          "recHits_hRHstpos-13",
+          "Resolution_hSResid-21",
+          "recHits_hRHstpos-21",
+          "Resolution_hSResid-22",
+          "recHits_hRHstpos-22",
+          "Resolution_hSResid-31",
+          "recHits_hRHstpos-31",
+          "Resolution_hSResid-32",
+          "recHits_hRHstpos-32",
+          "Resolution_hSResid-41",
+          "recHits_hRHstpos-41",
+          "Resolution_hSResid-42",
+          "recHits_hRHstpos-42"
+        ]
+      ],
+      "columns" : [
+        2
+      ]
+    }
+  },
+  "Pedestals" : {
+    "title" : "Pedestal Noise",
+    "content" : {
+      "labels" : [
+        "Pedestal subtracted ADC value in strips with no signal."
+      ],
+      "plots" : [
+        [
+          "PedestalNoise_hStripPedME+11",
+          "PedestalNoise_hStripPedME-11",
+          "PedestalNoise_hStripPedME+11a",
+          "PedestalNoise_hStripPedME-11a",
+          "PedestalNoise_hStripPedME+12",
+          "PedestalNoise_hStripPedME-12",
+          "PedestalNoise_hStripPedME+13",
+          "PedestalNoise_hStripPedME-13",
+          "PedestalNoise_hStripPedME+21",
+          "PedestalNoise_hStripPedME-21",
+          "PedestalNoise_hStripPedME+22",
+          "PedestalNoise_hStripPedME-22",
+          "PedestalNoise_hStripPedME+31",
+          "PedestalNoise_hStripPedME-31",
+          "PedestalNoise_hStripPedME+32",
+          "PedestalNoise_hStripPedME-32",
+          "PedestalNoise_hStripPedME+41",
+          "PedestalNoise_hStripPedME-41",
+          "PedestalNoise_hStripPedME+42",
+          "PedestalNoise_hStripPedME-42"
+        ]
+      ],
+      "columns" : [
+        2
+      ]
+    }
+  },
+  "Strip Timing" : {
+    "title" : "Cathode Strip Timing",
+    "content" : {
+      "labels" : [
+        "Timing based on weighted mean of cathode strip signal.  Units are 50ns time bins."
+      ],
+      "plots" : [
+        [
+          "mean_adc_time_bin_vs_cfeb_csc_ME_211",
+          "recHits_hRHTiming-11a",
+          "",
+          "recHits_hRHTiming-11",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_212",
+          "recHits_hRHTiming-12",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_213",
+          "recHits_hRHTiming-13",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_221",
+          "recHits_hRHTiming-21",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_222",
+          "recHits_hRHTiming-22",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_231",
+          "recHits_hRHTiming-31",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_232",
+          "recHits_hRHTiming-32",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_241",
+          "recHits_hRHTiming-41",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_242",
+          "recHits_hRHTiming-42",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_111",
+          "recHits_hRHTiming+11a",
+          "",
+          "recHits_hRHTiming+11",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_112",
+          "recHits_hRHTiming+12",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_113",
+          "recHits_hRHTiming+13",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_121",
+          "recHits_hRHTiming+21",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_122",
+          "recHits_hRHTiming+22",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_131",
+          "recHits_hRHTiming+31",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_132",
+          "recHits_hRHTiming+32",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_141",
+          "recHits_hRHTiming+41",
+          "mean_adc_time_bin_vs_cfeb_csc_ME_142",
+          "recHits_hRHTiming+42"
+        ]
+      ],
+      "columns" : [
+        2
+      ]
+    }
+  },
+  "Wire Timing" : {
+    "title" : "Anode Wire Timing",
+    "content" : {
+      "labels" : [
+        "Timing from anode signal, in units of BX (25ns).",
+        ""
+      ],
+      "plots" : [
+        [
+          "mean_afeb_time_bin_vs_csc_ME"
+        ],
+        [
+          "mean_afeb_time_bin_vs_afeb_csc_ME_111",
+          "Digis_hWireTBin+11",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_112",
+          "Digis_hWireTBin+12",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_113",
+          "Digis_hWireTBin+13",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_121",
+          "Digis_hWireTBin+21",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_122",
+          "Digis_hWireTBin+22",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_131",
+          "Digis_hWireTBin+31",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_132",
+          "Digis_hWireTBin+32",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_141",
+          "Digis_hWireTBin+41",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_142",
+          "Digis_hWireTBin+42",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_211",
+          "Digis_hWireTBin-11",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_212",
+          "Digis_hWireTBin-12",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_213",
+          "Digis_hWireTBin-13",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_221",
+          "Digis_hWireTBin-21",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_222",
+          "Digis_hWireTBin-22",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_231",
+          "Digis_hWireTBin-31",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_232",
+          "Digis_hWireTBin-32",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_241",
+          "Digis_hWireTBin-41",
+          "mean_afeb_time_bin_vs_afeb_csc_ME_242",
+          "Digis_hWireTBin-42"
+        ]
+      ],
+      "columns" : [
+        1,
+        2
+      ]
+    }
+  },
+  "Gas Gains" : {
+    "title" : "Gas Gains",
+    "content" : {
+      "labels" : [
+        "Sum 3 time bin (50ns) by 3 strip channel charge for reconstructed hits, in units of ADC counts.<br>Charge ratio is defined as the amount of ADC in strips on either side of the central hit strip, divided by the total charge of the all three hit strips."
+      ],
+      "plots" : [
+        [
+          "mean_gas_gain_vs_location_csc_ME_111",
+          "recHits_hRHSumQ+11",
+          "recHits_hRHRatioQ+11",
+          "",
+          "recHits_hRHSumQ+11a",
+          "recHits_hRHRatioQ+11a",
+          "mean_gas_gain_vs_location_csc_ME_112",
+          "recHits_hRHSumQ+12",
+          "recHits_hRHRatioQ+12",
+          "mean_gas_gain_vs_location_csc_ME_113",
+          "recHits_hRHSumQ+13",
+          "recHits_hRHRatioQ+13",
+          "mean_gas_gain_vs_location_csc_ME_121",
+          "recHits_hRHSumQ+21",
+          "recHits_hRHRatioQ+21",
+          "mean_gas_gain_vs_location_csc_ME_122",
+          "recHits_hRHSumQ+22",
+          "recHits_hRHRatioQ+22",
+          "mean_gas_gain_vs_location_csc_ME_131",
+          "recHits_hRHSumQ+31",
+          "recHits_hRHRatioQ+31",
+          "mean_gas_gain_vs_location_csc_ME_132",
+          "recHits_hRHSumQ+32",
+          "recHits_hRHRatioQ+32",
+          "mean_gas_gain_vs_location_csc_ME_141",
+          "recHits_hRHSumQ+41",
+          "recHits_hRHRatioQ+41",
+          "mean_gas_gain_vs_location_csc_ME_142",
+          "recHits_hRHSumQ+42",
+          "recHits_hRHRatioQ+42",
+          "mean_gas_gain_vs_location_csc_ME_211",
+          "recHits_hRHSumQ-11",
+          "recHits_hRHRatioQ-11",
+          "",
+          "recHits_hRHSumQ-11a",
+          "recHits_hRHRatioQ-11a",
+          "mean_gas_gain_vs_location_csc_ME_212",
+          "recHits_hRHSumQ-12",
+          "recHits_hRHRatioQ-12",
+          "mean_gas_gain_vs_location_csc_ME_213",
+          "recHits_hRHSumQ-13",
+          "recHits_hRHRatioQ-13",
+          "mean_gas_gain_vs_location_csc_ME_221",
+          "recHits_hRHSumQ-21",
+          "recHits_hRHRatioQ-21",
+          "mean_gas_gain_vs_location_csc_ME_222",
+          "recHits_hRHSumQ-22",
+          "recHits_hRHRatioQ-22",
+          "mean_gas_gain_vs_location_csc_ME_231",
+          "recHits_hRHSumQ-31",
+          "recHits_hRHRatioQ-31",
+          "mean_gas_gain_vs_location_csc_ME_232",
+          "recHits_hRHSumQ-32",
+          "recHits_hRHRatioQ-32",
+          "mean_gas_gain_vs_location_csc_ME_241",
+          "recHits_hRHSumQ-41",
+          "recHits_hRHRatioQ-41",
+          "mean_gas_gain_vs_location_csc_ME_242",
+          "recHits_hRHSumQ-42",
+          "recHits_hRHRatioQ-42"
+        ]
+      ],
+      "columns" : [
+        3
+      ]
+    }
+  },
+  "Segment Quality" : {
+    "title" : "Misc. Segment Plots",
+    "content" : {
+      "labels" : [
+        "Segments directions in the global frame.",
+        "Number of rechits on reconstructed segments (left).<br>Normalized Chi2 of segments (right)."
+      ],
+      "plots" : [
+        [
+          "Segments_hSGlobalPhi",
+          "Segments_hSGlobalTheta"
+        ],
+        [
+          "Segments_hSnHits+11",
+          "Segments_hSChiSq+11",
+          "Segments_hSnHits+11a",
+          "Segments_hSChiSq+11a",
+          "Segments_hSnHits+12",
+          "Segments_hSChiSq+12",
+          "Segments_hSnHits+13",
+          "Segments_hSChiSq+13",
+          "Segments_hSnHits+21",
+          "Segments_hSChiSq+21",
+          "Segments_hSnHits+22",
+          "Segments_hSChiSq+22",
+          "Segments_hSnHits+31",
+          "Segments_hSChiSq+31",
+          "Segments_hSnHits+32",
+          "Segments_hSChiSq+32",
+          "Segments_hSnHits+41",
+          "Segments_hSChiSq+41",
+          "Segments_hSnHits+42",
+          "Segments_hSChiSq+42",
+          "Segments_hSnHits-11",
+          "Segments_hSChiSq-11",
+          "Segments_hSnHits-11a",
+          "Segments_hSChiSq-11a",
+          "Segments_hSnHits-12",
+          "Segments_hSChiSq-12",
+          "Segments_hSnHits-13",
+          "Segments_hSChiSq-13",
+          "Segments_hSnHits-21",
+          "Segments_hSChiSq-21",
+          "Segments_hSnHits-22",
+          "Segments_hSChiSq-22",
+          "Segments_hSnHits-31",
+          "Segments_hSChiSq-31",
+          "Segments_hSnHits-32",
+          "Segments_hSChiSq-32",
+          "Segments_hSnHits-41",
+          "Segments_hSChiSq-41",
+          "Segments_hSnHits-42",
+          "Segments_hSChiSq-42"
+        ]
+      ],
+      "columns" : [
+        2,
+        2
+      ]
+    }
+  },
+  "STA Muons" : {
+    "title" : "Standalone Muon Plots",
+    "content" : {
+      "labels" : [
+        "Number of Hits per Standalone Muon Track",
+        "Normalized Chi-squared of Standalone Muon Tracks",
+        "Length along Z of STA muon tracks",
+        "Standalone Muon momentum and transverse momentum",
+        "Number of Standalone Muon tracks per event"
+      ],
+      "plots" : [
+        [
+          "STAMuons_nMuons"
+        ],
+        [
+          "STAMuons_nHits",
+          "STAMuons_nCSCHits"
+        ],
+        [
+          "STAMuons_chi2"
+        ],
+        [
+          "STAMuons_p",
+          "STAMuons_pt"
+        ],
+        [
+          "STAMuons_zLength"
+        ]
+      ],
+      "columns" : [
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  "BX Monitor" : {
+    "title" : "BX Monitor",
+    "content" : {
+      "labels" : [
+        "",
+        ""
+      ],
+      "plots" : [
+        [
+          "ALCT_getBX",
+          "ALCT_getFullBX",
+          "CLCT_getBX",
+          "CLCT_getFullBX",
+          "CorrelatedLCTS_getBX",
+          ""
+        ],
+        [
+          "BX_L1CSCCand_w_beamHalo",
+          "BX_L1CSCCand",
+          "n_RecHits_v_BX_L1CSCCand",
+          "n_CLCTs_v_BX_L1CSCCand",
+          "n_Segments_v_BX_L1CSCCand_w_beamHalo",
+          "n_ALCTs_v_BX_L1CSCCand",
+          "n_CorrelatedLCTs_v_BX_L1CSCCand",
+          ""
+        ]
+      ],
+      "columns" : [
+        2,
+        2
+      ]
+    }
+  },
+  "Timing Monitor" : {
+    "title" : "Timing Monitor",
+    "content" : {
+      "labels" : [
+        "",
+        ""
+      ],
+      "plots" : [
+        [
+          "seg_time_vs_distToIP",
+          "seg_time_vs_globZ",
+          "seg_time_vs_absglobZ",
+          "timeChamber"
+        ],
+        [
+          "TMB_ALCTMatchTime",
+          "prof_TMB_ALCTMatchTime",
+          "prof_TMB_ALCT_rel_L1A_v_ALCTKeyWG",
+          "prof_TMB_ALCTMatchTime_v_ALCT0KeyWG",
+          "prof_TMB_ALCT_rel_L1A",
+          "prof_TMB_ALCT_rel_L1A_by_ring"
+        ]
+      ],
+      "columns" : [
+        2,
+        2
+      ]
+    }
+  },
+  "L1 Emulator" : {
+    "title" : "L1 Emulator",
+    "content" : ""
+  },
+  "Hot and dead wire groups" : {
+    "title" : "Hot and dead wire groups",
+    "content" : ""
+  }
+}

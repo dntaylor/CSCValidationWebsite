@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSCValidation</title>
+    <script src="js/runlist.json"></script>
+    <script src="js/archivelist.json"></script>
+    <script src="js/histviews.json"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+</head>
+
+<body onload="getRunList();">
+    <div style="width:100%" id="window">
+        <div style="width:100%" id="menu">
+            <div style="width:100%" id="runmenu">
+                <form id="runForm">
+                    CSCVal for run
+                    <select id="runSelect" onchange="loadDatasets('runSelect','datasetSelect');">
+                        <option>Select run</option>
+                    </select>
+                    <select id="datasetSelect" disabled="disabled">
+                        <option value="">Select dataset</option>
+                    </select>
+                    <input type="button" onclick="buildSubmenu();loadRuns();" value="Select"> | 
+                    <input type="checkbox" id="compareRun" onchange="setupCompareRun();">
+                    Compare to run
+                    <select id="compareRunSelect" disabled="disabled" onchange="loadDatasets('compareRunSelect','compareDatasetSelect');">
+                        <option>Select run</option>
+                    </select>
+                    <select id="compareDatasetSelect" disabled="disabled">
+                        <option value="">Select dataset</option>
+                    </select>
+                    <input type="button" onclick="buildSubmenu();loadRuns();" value="Select"> | 
+                    Archived run
+                    <select id="archiveSelect">
+                        <option>Select run</option>
+                    </select>
+                    <input type="button" onclick="downloadArchive();" value="Download">
+                </form>
+            </div>
+            <div style="width:100%" id="submenu">
+            </div>
+            <div style="width:100%" id="submenuBorder">
+            </div>
+        </div>
+        <div id="menu-alias"></div>
+        <div style="width:100%" id="outputWindow">
+            <p>Select run above to view histograms. Then hit select. You can compare two runs by selecting the compare checkbox and selecting the comparison run.</p>
+        </div>
+    </div>
+</body
+
+</html>
