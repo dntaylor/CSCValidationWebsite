@@ -25722,14 +25722,6 @@ var runData = {
   "234782" : {
     "directory" : "234782",
     "datasets" : {
-      "newruns" : {
-        "release" : "CMSSW_7_2_1",
-        "datasetname" : "/Cosmics/Commissioning2015-v1/RAW",
-        "runnum" : "234782",
-        "events" : "2000000",
-        "globaltag" : "GR_P_V14",
-        "rundate" : "2015/02/24 16:50:47"
-      },
       "run_234782" : {
         "release" : "CMSSW_3_3_4",
         "datasetname" : "/Cosmics/BeamCommissioning09-PromptReco-v2/RECO",
@@ -25750,19 +25742,6 @@ var runData = {
         "events" : "159",
         "globaltag" : "GR09_P_V6",
         "rundate" : "2009/12/02 20:07:29"
-      }
-    }
-  },
-  "234874" : {
-    "directory" : "234874",
-    "datasets" : {
-      "run_234874" : {
-        "release" : "CMSSW_7_3_1",
-        "datasetname" : "/Cosmics/Commissioning2015-v1/RAW",
-        "runnum" : "234874",
-        "events" : "50000",
-        "globaltag" : "PRE_62_V8",
-        "rundate" : "2015/03/05 16:19:53"
       }
     }
   },
@@ -25854,6 +25833,201 @@ var runData = {
         "events" : "50000",
         "globaltag" : "PRE_62_V8",
         "rundate" : "2015/03/10 11:23:44"
+      }
+    }
+  },
+  "237954" : {
+    "directory" : "237954",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_3_3_4",
+        "datasetname" : "/Cosmics/BeamCommissioning09-PromptReco-v2/RECO",
+        "runnum" : "123384",
+        "events" : "159",
+        "globaltag" : "GR09_P_V6",
+        "rundate" : "2009/12/02 20:07:29"
+      }
+    }
+  },
+  "237955" : {
+    "directory" : "237955",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_3_3_4",
+        "datasetname" : "/Cosmics/BeamCommissioning09-PromptReco-v2/RECO",
+        "runnum" : "123384",
+        "events" : "159",
+        "globaltag" : "GR09_P_V6",
+        "rundate" : "2009/12/02 20:07:29"
+      }
+    }
+  },
+  "237956" : {
+    "directory" : "237956",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "237956",
+        "events" : "1000000",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/16 17:01:55"
+      }
+    }
+  },
+  "238081" : {
+    "directory" : "238081",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238081",
+        "events" : "3061586",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:43:26"
+      }
+    }
+  },
+  "238194" : {
+    "directory" : "238194",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238194",
+        "events" : "76160",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:48:34"
+      }
+    }
+  },
+  "238199" : {
+    "directory" : "238199",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238199",
+        "events" : "77946",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:49:21"
+      }
+    }
+  },
+  "238201" : {
+    "directory" : "238201",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238201",
+        "events" : "84755",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:49:40"
+      }
+    }
+  },
+  "238203" : {
+    "directory" : "238203",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238203",
+        "events" : "138947",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:50:08"
+      }
+    }
+  },
+  "238205" : {
+    "directory" : "238205",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238205",
+        "events" : "85726",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:50:28"
+      }
+    }
+  },
+  "238207" : {
+    "directory" : "238207",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238207",
+        "events" : "82014",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:51:05"
+      }
+    }
+  },
+  "238208" : {
+    "directory" : "238208",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238208",
+        "events" : "89570",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:51:30"
+      }
+    }
+  },
+  "238209" : {
+    "directory" : "238209",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238209",
+        "events" : "291752",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:51:58"
+      }
+    }
+  },
+  "238210" : {
+    "directory" : "238210",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238210",
+        "events" : "2710016",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:52:24"
+      }
+    }
+  },
+  "238309" : {
+    "directory" : "238309",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238309",
+        "events" : "179074",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/18 22:32:59"
+      }
+    }
+  },
+  "238329" : {
+    "directory" : "238329",
+    "datasets" : {
+      "ExpressCosmics" : {
+        "release" : "CMSSW_7_3_4",
+        "datasetname" : "/ExpressCosmics/Commissioning2015-Express-v1/FEVT",
+        "runnum" : "238329",
+        "events" : "405215",
+        "globaltag" : "GR_E_V42",
+        "rundate" : "2015/03/19 08:25:19"
       }
     }
   }
