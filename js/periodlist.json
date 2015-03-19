@@ -1,7 +1,7 @@
 var periodData = {
   "CRAFT2015" : {
     "startrun" : "238445",
-    "endrun"   : "-1"
+    "endrun"   : "999999999"
   },
   "CRUZET2015" : {
     "startrun" : "232881",
@@ -41,6 +41,6 @@ var periodData = {
   },
   "AllRuns" : {
     "startrun" : "1",
-    "endrun"   : "-1"
+    "endrun"   : "999999999"
   }
 }
