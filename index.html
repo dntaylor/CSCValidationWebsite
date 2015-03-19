@@ -3,6 +3,7 @@
 
 <head>
     <title>CSCValidation</title>
+    <script src="js/periodlist.json"></script>
     <script src="js/runlist.json"></script>
     <script src="js/archivelist.json"></script>
     <script src="js/histviews.json"></script>
@@ -13,13 +14,17 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 </head>
 
-<body onload="getRunList();">
+<body onload="getPeriodList();">
     <div style="width:100%" id="window">
         <div style="width:100%" id="menu">
             <div style="width:100%" id="runmenu">
                 <form id="runForm">
-                    CSCVal for run
-                    <select id="runSelect" onchange="loadDatasets('runSelect','datasetSelect');">
+                    CSCVal for 
+                    <select id="periodSelect" onchange="loadRunList('periodSelect','runSelect');">
+                        <option>Select period</run>
+                    </select>
+                    run
+                    <select id="runSelect" onchange="loadDatasets('periodSelect','runSelect','datasetSelect');" disabled="disabled">
                         <option>Select run</option>
                     </select>
                     <select id="datasetSelect" disabled="disabled">
@@ -27,8 +32,12 @@
                     </select>
                     <input type="button" onclick="buildSubmenu();loadRuns();" value="Select"> | 
                     <input type="checkbox" id="compareRun" onchange="setupCompareRun();">
-                    Compare to run
-                    <select id="compareRunSelect" disabled="disabled" onchange="loadDatasets('compareRunSelect','compareDatasetSelect');">
+                    Compare to
+                    <select id="comparePeriodSelect" onchange="loadRunList('comparePeriodSelect','compareRunSelect');" disabled="disabled">
+                        <option>Select period</run>
+                    </select>
+                    run
+                    <select id="compareRunSelect" disabled="disabled" onchange="loadDatasets('comparePeriodSelect','compareRunSelect','compareDatasetSelect');">
                         <option>Select run</option>
                     </select>
                     <select id="compareDatasetSelect" disabled="disabled">

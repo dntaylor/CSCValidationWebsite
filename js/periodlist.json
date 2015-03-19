@@ -1,0 +1,46 @@
+var periodData = {
+  "CRAFT2015" : {
+    "startrun" : "238445",
+    "endrun"   : "-1"
+  },
+  "CRUZET2015" : {
+    "startrun" : "232881",
+    "endrun"   : "238412"
+  },
+  "Run2012D" : {
+    "startrun" : "203773",
+    "endrun"   : "209465"
+  },
+  "Run2012C" : {
+    "startrun" : "197770",
+    "endrun"   : "203755"
+  },
+  "Run2012B" : {
+    "startrun" : "193752",
+    "endrun"   : "197044"
+  },
+  "Run2012A" : {
+    "startrun" : "190450",
+    "endrun"   : "193686"
+  },
+  "Run2011B" : {
+    "startrun" : "175832",
+    "endrun"   : "180296"
+  },
+  "Run2011A" : {
+    "startrun" : "160329",
+    "endrun"   : "175784"
+  },
+  "Run2010B" : {
+    "startrun" : "146581",
+    "endrun"   : "160077"
+  },
+  "Run2010A" : {
+    "startrun" : "137289",
+    "endrun"   : "142089"
+  },
+  "AllRuns" : {
+    "startrun" : "1",
+    "endrun"   : "-1"
+  }
+}

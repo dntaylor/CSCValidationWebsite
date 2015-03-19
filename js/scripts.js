@@ -19,19 +19,19 @@ $(function(){
         });
   });
 
-// create run list
-function getRunList() {
-    var runMenu = document.getElementById("runSelect");
-    var compareRunMenu = document.getElementById("compareRunSelect");
-    for (var run in runData) {
-        var runOption = document.createElement("option");
-        var compareRunOption = document.createElement("option");
-        runOption.textContent = run;
-        compareRunOption.textContent = run;
-        runOption.value = runData[run]["directory"];
-        compareRunOption.value = runData[run]["directory"];
-        runMenu.appendChild(runOption);
-        compareRunMenu.appendChild(compareRunOption);
+// create period list
+function getPeriodList() {
+    var periodMenu = document.getElementById("periodSelect");
+    var comparePeriodMenu = document.getElementById("comparePeriodSelect");
+    for (var period in periodData) {
+        var periodOption = document.createElement("option");
+        var comparePeriodOption = document.createElement("option");
+        periodOption.textContent = period;
+        comparePeriodOption.textContent = period;
+        periodOption.value = period;
+        comparePeriodOption.value = period;
+        periodMenu.appendChild(periodOption);
+        comparePeriodMenu.appendChild(comparePeriodOption);
     }
     var archiveMenu = document.getElementById("archiveSelect");
     for (var run in archiveList) {
@@ -40,6 +40,29 @@ function getRunList() {
         archiveOption.value = archiveList[run];
         archiveMenu.appendChild(archiveOption);
     }
+}
+
+// create run list
+function loadRunList(periodMenuString,runMenuString) {
+    var periodMenu = document.getElementById(periodMenuString);
+    var runMenu = document.getElementById(runMenuString);
+    var period = periodMenu.options[periodMenu.selectedIndex].text;
+    var startrun = periodData[period]["startrun"];
+    var endrun = periodData[period]["endrun"];
+    // remove old options
+    while (runMenu.length>0) {
+        runMenu.remove(runMenu.length-1);
+    }
+    // load current menu
+    for (var run in runData) {
+        if (parseInt(run)>=parseInt(startrun) && parseInt(run)<=parseInt(endrun)) {
+            var runOption = document.createElement("option");
+            runOption.textContent = run;
+            runOption.value = runData[run]["directory"];
+            runMenu.appendChild(runOption);
+        }
+    }
+    runMenu.disabled = false;
 }
 
 // download archive from https://cms-conddb.cern.ch/eosweb/csc/
@@ -63,7 +86,8 @@ function downloadURL(url) {
 }
 
 // load datasets for selected run
-function loadDatasets(runMenuString,datasetMenuString) {
+function loadDatasets(periodMenuString,runMenuString,datasetMenuString) {
+    var periodMenu = document.getElementById(periodMenuString);
     var runMenu = document.getElementById(runMenuString);
     var datasetMenu = document.getElementById(datasetMenuString);
     var run = runMenu.options[runMenu.selectedIndex].text;
@@ -83,14 +107,17 @@ function loadDatasets(runMenuString,datasetMenuString) {
 
 // setup comparison between two runs
 function setupCompareRun() {
+    var comparePeriodMenu = document.getElementById("comparePeriodSelect");
     var compareRunMenu = document.getElementById("compareRunSelect");
     var compareDatasetMenu = document.getElementById("compareDatasetSelect");
     var compareRunBox = document.getElementById("compareRun");
     if (compareRunBox.checked) {
+        comparePeriodMenu.disabled = false;
         compareRunMenu.disabled = false;
         compareDatasetMenu.disabled = false;
     }
     else {
+        comparePeriodMenu.disabled = true;
         compareRunMenu.disabled = true;
         compareDatasetMenu.disabled = true;
     }
@@ -119,7 +146,6 @@ function buildSubmenu() {
 
 // set link to active
 function setActive() {
-    var submenu = document.getElementById("submenu");
     var aObjects = submenu.getElementsByTagName('a');
     for (var i=0; i<aObjects.length; i++) {
         if (aObjects[i].id==currentPage) {
