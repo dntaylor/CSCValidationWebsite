@@ -19,6 +19,92 @@ $(function(){
         });
   });
 
+// parse url
+function parseURL() {
+    var uri = new URI(document.URL);
+    var params = uri.search(true);
+    console.log(params);
+    getPeriodList();
+    if (params.page !== undefined) {
+        currentPage = params.page;
+    }
+    if (params.period !== undefined) { 
+        var periodMenu = document.getElementById("periodSelect");
+        periodMenu.value = params.period;
+        loadRunList('periodSelect','runSelect');
+        if (params.run !== undefined) {
+            var runMenu = document.getElementById('runSelect');
+            runMenu.value = params.run;
+            loadDatasets('periodSelect','runSelect','datasetSelect');
+            if (params.dataset !== undefined) {
+                var datasetMenu = document.getElementById('datasetSelect');
+                datasetMenu.value = params.dataset;
+            }
+        }
+    }
+    var compareRunBox = document.getElementById("compareRun");
+    if (params.compare !== undefined) {
+        compareRunBox.checked = true;
+    }
+    else {
+        compareRunBox.checked = false;
+    }
+    setupCompareRun();
+    if (params.comparePeriod !== undefined) { 
+        var comparePeriodMenu = document.getElementById("comparePeriodSelect");
+        comparePeriodMenu.value = params.comparePeriod;
+        loadRunList('comparePeriodSelect','compareRunSelect');
+        if (params.compareRun !== undefined) {
+            var compareRunMenu = document.getElementById('compareRunSelect');
+            compareRunMenu.value = params.compareRun;
+            loadDatasets('comparePeriodSelect','compareRunSelect','compareDatasetSelect');
+            if (params.compareDataset !== undefined) {
+                var compareDatasetMenu = document.getElementById('compareDatasetSelect');
+                compareDatasetMenu.value = params.compareDataset;
+            }
+        }
+    }
+    if (params.period !== undefined & params.run !== undefined & params.dataset !== undefined) {
+        buildSubmenu();
+        loadRuns();
+    }
+}
+
+function getURL(page) {
+    var uri = new URI(document.URL);
+    uri.search("");
+    uri.setSearch("page",page);
+    var periodMenu = document.getElementById("periodSelect");
+    var runMenu = document.getElementById("runSelect");
+    var datasetMenu = document.getElementById("datasetSelect");
+    var period = periodMenu.options[periodMenu.selectedIndex].value;
+    var run = runMenu.options[runMenu.selectedIndex].value;
+    var dataset = datasetMenu.options[datasetMenu.selectedIndex].value;
+    var compareRunBox = document.getElementById("compareRun");
+    var doCompare = compareRunBox.checked;
+    var comparePeriodMenu = document.getElementById("comparePeriodSelect");
+    var compareRunMenu = document.getElementById("compareRunSelect");
+    var compareDatasetMenu = document.getElementById("compareDatasetSelect");
+    var comparePeriod = comparePeriodMenu.options[comparePeriodMenu.selectedIndex].value;
+    var compareRun = compareRunMenu.options[compareRunMenu.selectedIndex].value;
+    var compareDataset = compareDatasetMenu.options[compareDatasetMenu.selectedIndex].value;
+    uri.setSearch("period",period);
+    uri.setSearch("run",run);
+    uri.setSearch("dataset",dataset);
+    if (doCompare) {
+        uri.setSearch("compare","true");
+        uri.setSearch("comparePeriod",comparePeriod);
+        uri.setSearch("compareRun",compareRun);
+        uri.setSearch("compareDataset",compareDataset);
+    }
+    return uri.toString();
+}
+
+function loadPage() {
+    var url = getURL(currentPage);
+    window.location=url;
+}
+
 // create period list
 function getPeriodList() {
     var periodMenu = document.getElementById("periodSelect");
@@ -127,9 +213,9 @@ function setupCompareRun() {
 function buildSubmenu() {
     var submenuHtml = ''
     for (var pageName in pageData) {
-        submenuHtml += '<a href="javascript:void(0)" id="' + pageName
-                        + '" onclick="currentPage=\'' + pageName
-                        + '\';loadRuns();">' + pageName
+        submenuHtml += '<a href="' + getURL(pageName)
+                        + '" id="' + pageName
+                        + '">' + pageName
                         + '</a>';
         if (pageName=="Wire Timing") {
             submenuHtml += '<br>';

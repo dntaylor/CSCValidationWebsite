@@ -7,14 +7,16 @@
     <script src="js/runlist.json"></script>
     <script src="js/archivelist.json"></script>
     <script src="js/histviews.json"></script>
+    <script src="js/lastrun.json"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/uri.js"></script>
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 </head>
 
-<body onload="getPeriodList();">
+<body onload="parseURL();">
     <div style="width:100%" id="window">
         <div style="width:100%" id="menu">
             <div style="width:100%" id="runmenu">
@@ -30,7 +32,7 @@
                     <select id="datasetSelect" disabled="disabled">
                         <option value="">Select dataset</option>
                     </select>
-                    <input type="button" onclick="buildSubmenu();loadRuns();" value="Select"> | 
+                    <input type="button" onclick="loadPage();" value="Select"> | 
                     <input type="checkbox" id="compareRun" onchange="setupCompareRun();">
                     Compare to
                     <select id="comparePeriodSelect" onchange="loadRunList('comparePeriodSelect','compareRunSelect');" disabled="disabled">
@@ -43,7 +45,7 @@
                     <select id="compareDatasetSelect" disabled="disabled">
                         <option value="">Select dataset</option>
                     </select>
-                    <input type="button" onclick="buildSubmenu();loadRuns();" value="Select"> | 
+                    <input type="button" onclick="loadPage();" value="Select"> | 
                     Archived run
                     <select id="archiveSelect">
                         <option>Select run</option>
@@ -58,7 +60,12 @@
         </div>
         <div id="menu-alias"></div>
         <div style="width:100%" id="outputWindow">
-            <p>Select run above to view histograms. Then hit select. You can compare two runs by selecting the compare checkbox and selecting the comparison run.</p>
+            <p>To view the output of a CSCValidation run, select the run period, then the run of interest,
+               and then the processed dataset. Hit select to load the run. You can compare two runs 
+               side-by-side by selecting the 'Compare to' checkbox and then selecting the comparison run 
+               parameters. In addition, there are archived runs from the old webpage available in the 
+               'Archived run' section.</p>
+            <p>CSCValidation was last run on <script>document.write(lastrun["lastrun"]);</script></p>
         </div>
     </div>
 </body
