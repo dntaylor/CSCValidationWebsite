@@ -8,7 +8,6 @@ var pageData = {
     "content" : {
       "labels" : [
         "(1 entry per event per chamber with 1 or more wire digi/hit/segment)",
-        "",
         ""
       ],
       "plots" : [
@@ -19,16 +18,13 @@ var pageData = {
           "hOSegments"
         ],
         [
-          "hltTriggerBits"
-        ],
-        [
+          "hltTriggerBits",
           "CSCOccupancy"
         ]
       ],
       "columns" : [
         2,
-        1,
-        1
+        2
       ]
     }
   },
@@ -463,36 +459,28 @@ var pageData = {
     "content" : {
       "labels" : [
         "Number of Hits per Standalone Muon Track",
-        "Normalized Chi-squared of Standalone Muon Tracks",
-        "Length along Z of STA muon tracks",
-        "Standalone Muon momentum and transverse momentum",
-        "Number of Standalone Muon tracks per event"
+        "Length along Z of STA muon tracks and Normalized Chi-squared of Standalone Muon Tracks",
+        "Standalone Muon momentum and transverse momentum"
       ],
       "plots" : [
         [
-          "STAMuons_nMuons"
-        ],
-        [
+          "STAMuons_nMuons",
           "STAMuons_nHits",
           "STAMuons_nCSCHits"
         ],
         [
+          "STAMuons_zLength",
           "STAMuons_chi2"
         ],
         [
           "STAMuons_p",
           "STAMuons_pt"
-        ],
-        [
-          "STAMuons_zLength"
         ]
       ],
       "columns" : [
-        1,
+        3,
         2,
-        1,
-        2,
-        1
+        2
       ]
     }
   },
