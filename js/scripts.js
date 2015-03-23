@@ -304,6 +304,19 @@ function getHtml(pngDir,doCompare,run,dataset) {
        pageHTML += '<p class="sublabel">Event Processed: ' + runData[run]['datasets'][dataset]['events'] + '</p>'
        pageHTML += '<p class="sublabel">GlobalTag: ' + runData[run]['datasets'][dataset]['globaltag'] + '</p>'
        pageHTML += '<p class="sublabel">CSCValidation run on ' + runData[run]['datasets'][dataset]['rundate'] + '</p>'
+       pageHTML += '<p class="sublabel">More information: <br/>'
+                   + '<a href="https://cmsweb.cern.ch/das/request?view=list&limit=10&instance=prod%2Fglobal&input=summary+dataset=' 
+                   + runData[run]['datasets'][dataset]['datasetname'] + '+run=' 
+                   + runData[run]['datasets'][dataset]['runnum'] + '">DAS Summary</a><br/>'
+                   + '<a href="https://cmsweb.cern.ch/das/request?view=list&limit=10&instance=prod%2Fglobal&input=run='
+                   + runData[run]['datasets'][dataset]['runnum'] + '">DAS Run Information</a><br/>'
+                   + '<a href="https://cmswbm.web.cern.ch/cmswbm/cmsdb/servlet/RunSummary?RUN=' 
+                   + runData[run]['datasets'][dataset]['runnum'] + '&SUBMIT=Submit">Run Summary</a><br/>'
+                   + '<a href="https://cmsweb.cern.ch/dqm/online/start?runnr=' 
+                   + runData[run]['datasets'][dataset]['runnum'] + ';dataset=/Global/Online/ALL;sampletype=online_data;filter=all;referencepos=overlay;'
+                   + 'referenceshow=customise;referenceobj1=refobj;referenceobj2=none;referenceobj3=none;referenceobj4=none;search=;'
+                   + 'striptype=object;stripruns=;stripaxis=run;stripomit=none;workspace=CSC;size=M;root=Quick%20collection;focus=;zoom=no;">Online DQM</a><br/>'
+                   + '</p>'
        return pageHTML;
     }
     for (var l in pageData[currentPage]['content']['labels']) {
