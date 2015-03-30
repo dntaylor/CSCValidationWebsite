@@ -158,7 +158,9 @@ function loadRunList(periodMenuString,runMenuString) {
             var runOption = document.createElement("option");
             runOption.textContent = run;
             runOption.value = runData[run]["directory"];
-            runMenu.appendChild(runOption);
+            //runMenu.appendChild(runOption);
+            runMenu.insertBefore(runOption,runMenu.firstChild);
+            runMenu.selectedIndex = 0;
         }
     }
     runMenu.disabled = false;
