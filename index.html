@@ -22,7 +22,7 @@
             <div style="width:100%" id="runmenu">
                 <form id="runForm">
                     <a href="http://cms-project-csc-validation.web.cern.ch/cms-project-csc-validation/" style="color:white">CSCVal</a> for 
-                    <select id="periodSelect" onchange="loadRunList('periodSelect','runSelect');">
+                    <select id="periodSelect" onchange="loadRunList('periodSelect','runSelect');loadDatasets('periodSelect','runSelect','datasetSelect');">
                         <option>Select period</run>
                     </select>
                     run
@@ -35,7 +35,7 @@
                     <input type="button" onclick="loadPage();" value="Select"> | 
                     <input type="checkbox" id="compareRun" onchange="setupCompareRun();">
                     Compare to
-                    <select id="comparePeriodSelect" onchange="loadRunList('comparePeriodSelect','compareRunSelect');" disabled="disabled">
+                    <select id="comparePeriodSelect" onchange="loadRunList('comparePeriodSelect','compareRunSelect');loadDatasets('comparePeriodSelect','compareRunSelect','compareDatasetSelect');" disabled="disabled">
                         <option>Select period</run>
                     </select>
                     run
