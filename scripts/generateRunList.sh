@@ -11,14 +11,32 @@ do
     then
         output=","
     fi
+
     run=$(basename $runPath)
     run=${run:3:${#run}}
+
+    datasets="$runPath/*"
+    skipRun=false
+    for datasetPath in $datasets
+    do
+        if [ ! -f $datasetPath/Site/PNGS/ALCT_getBX.png ] ; then
+            # no CSCs in run, don't show
+            skipRun=true
+        fi
+    done
+    if [ "$skipRun" = true ] ; then
+        continue
+    fi
+
     output="$output\n  \"$run\" : {"
     output="$output\n    \"directory\" : \"$run\","
     output="$output\n    \"datasets\" : {"
-    datasets="$runPath/*"
     for datasetPath in $datasets
     do
+        if [ ! -f $datasetPath/Site/PNGS/ALCT_getBX.png ] ; then
+            # no CSCs in dataset
+            continue
+        fi
         dataset=$(basename $datasetPath)
         output="$output\n      \"$dataset\" : {"
 
