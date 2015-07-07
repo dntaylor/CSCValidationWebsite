@@ -16,12 +16,12 @@ do
     run=${run:3:${#run}}
 
     datasets="$runPath/*"
-    skipRun=false
+    skipRun=true
     for datasetPath in $datasets
     do
-        if [ ! -f $datasetPath/Site/PNGS/ALCT_getBX.png ] ; then
-            # no CSCs in run, don't show
-            skipRun=true
+        if [ -f $datasetPath/Site/PNGS/timeChamber.png ] ; then
+            # at least one valid dataset
+            skipRun=false
         fi
     done
     if [ "$skipRun" = true ] ; then
@@ -33,7 +33,7 @@ do
     output="$output\n    \"datasets\" : {"
     for datasetPath in $datasets
     do
-        if [ ! -f $datasetPath/Site/PNGS/ALCT_getBX.png ] ; then
+        if [ ! -f $datasetPath/Site/PNGS/timeChamber.png ] ; then
             # no CSCs in dataset
             continue
         fi
@@ -62,7 +62,21 @@ do
         output="$output\n        \"runnum\" : \"$runnum\","
         output="$output\n        \"events\" : \"$events\","
         output="$output\n        \"globaltag\" : \"$globaltag\","
-        output="$output\n        \"rundate\" : \"$rundate\""
+        output="$output\n        \"rundate\" : \"$rundate\","
+        output="$output\n        \"triggers\" : ["
+        output="$output\n          \"All\""
+
+        riggers=$(find $datasetPath/Site/PNGS/* -maxdepth 0 -type d)
+        for triggerPath in $triggers
+        do
+            if [ ! -f $triggerPath/timeChamber.png ] ; then
+                continue
+            fi
+            trig=$(basename $triggerPath)
+            output="$output,\n          \"$trig\""
+        done
+
+        output="$output\n        ]"
         output="$output\n      },"
     done
     # delete trailing ,

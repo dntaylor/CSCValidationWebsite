@@ -1,7 +1,15 @@
 var periodData = {
+  "Run2015B" : {
+    "startrun" : "250974",
+    "endrun"   : "999999",
+  },
+  "Run2015A" : {
+    "startrun" : "246865",
+    "endrun"   : "250973",
+  },
   "BeamComm2015" : {
     "startrun" : "239636",
-    "endrun"   : "999999"
+    "endrun"   : "246864"
   },
   "CRAFT2015" : {
     "startrun" : "238445",
