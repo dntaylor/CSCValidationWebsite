@@ -546,12 +546,30 @@ var pageData = {
       ]
     }
   },
-  "L1 Emulator" : {
-    "title" : "L1 Emulator",
-    "content" : ""
-  },
-  "Hot and dead wire groups" : {
-    "title" : "Hot and dead wire groups",
-    "content" : ""
+  "CSCTF" : {
+    "title" : "CSCTF",
+    "content" : {
+      "labels" : [
+        "",
+        ""
+      ],
+      "plots" : [
+        [
+          "csctfChamberOccupancy"
+        ],
+        [
+          "csctfLct",
+          "csctfTrackModeVQual",
+          "csctfBx",
+          "csctfBxHalo",
+          "csctOccupancies",
+          "csctOccupanciesHalo"
+        ]
+      ],
+      "columns" : [
+        1,
+        2
+      ]
+    }
   }
 }

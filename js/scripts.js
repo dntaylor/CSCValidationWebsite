@@ -249,7 +249,7 @@ function buildSubmenu() {
         if (pageName=="Wire Timing") {
             submenuHtml += '<br>';
         }
-        else if (pageName=="Hot and dead wire groups") {
+        else if (pageName=="CSCTF") {
             continue;
         }
         else {
