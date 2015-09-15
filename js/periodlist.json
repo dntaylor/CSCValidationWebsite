@@ -1,7 +1,11 @@
 var periodData = {
+  "Run2015D" : {
+    "startrun" : "256495",
+    "endrun"   : "999999",
+  },
   "Run2015C" : {
     "startrun" : "253659",
-    "endrun"   : "999999",
+    "endrun"   : "256494",
   },
   "Run2015B" : {
     "startrun" : "250974",
