@@ -55,10 +55,6 @@ function parseURL() {
             }
         }
     }
-    if (params.trigger !== undefined) {
-        var triggerMenu = document.getElementById('triggerSelect');
-        triggerMenu.value = params.trigger;
-    }
     var compareRunBox = document.getElementById("compareRun");
     if (params.compare !== undefined) {
         compareRunBox.checked = true;
@@ -81,10 +77,6 @@ function parseURL() {
             }
         }
     }
-    if (params.compareTrigger !== undefined) {
-        var compareTriggerMenu = document.getElementById('compareTriggerSelect');
-        compareTriggerMenu.value = params.compareTrigger;
-    }
     if (params.period !== undefined & params.run !== undefined & params.dataset !== undefined) {
         buildSubmenu();
         loadRuns();
@@ -98,31 +90,25 @@ function getURL(page) {
     var periodMenu = document.getElementById("periodSelect");
     var runMenu = document.getElementById("runSelect");
     var datasetMenu = document.getElementById("datasetSelect");
-    var triggerMenu = document.getElementById("triggerSelect");
     var period = periodMenu.options[periodMenu.selectedIndex].value;
     var run = runMenu.options[runMenu.selectedIndex].value;
     var dataset = datasetMenu.options[datasetMenu.selectedIndex].value;
-    var trigger = triggerMenu.options[triggerMenu.selectedIndex].value;
     var compareRunBox = document.getElementById("compareRun");
     var doCompare = compareRunBox.checked;
     var comparePeriodMenu = document.getElementById("comparePeriodSelect");
     var compareRunMenu = document.getElementById("compareRunSelect");
     var compareDatasetMenu = document.getElementById("compareDatasetSelect");
-    var compareTriggerMenu = document.getElementById("compareTriggerSelect");
     var comparePeriod = comparePeriodMenu.options[comparePeriodMenu.selectedIndex].value;
     var compareRun = compareRunMenu.options[compareRunMenu.selectedIndex].value;
     var compareDataset = compareDatasetMenu.options[compareDatasetMenu.selectedIndex].value;
-    var compareTrigger = compareTriggerMenu.options[compareTriggerMenu.selectedIndex].value;
     uri.setSearch("period",period);
     uri.setSearch("run",run);
     uri.setSearch("dataset",dataset);
-    uri.setSearch("trigger",trigger);
     if (doCompare) {
         uri.setSearch("compare","true");
         uri.setSearch("comparePeriod",comparePeriod);
         uri.setSearch("compareRun",compareRun);
         uri.setSearch("compareDataset",compareDataset);
-        uri.setSearch("compareTrigger",compareTrigger);
     }
     return uri.toString();
 }
@@ -277,28 +263,18 @@ function loadRuns() {
     setActive();
     var runMenu = document.getElementById("runSelect");
     var datasetMenu = document.getElementById("datasetSelect");
-    var triggerMenu = document.getElementById("triggerSelect");
     var run = runMenu.options[runMenu.selectedIndex].value;
     var dataset = datasetMenu.options[datasetMenu.selectedIndex].value;
-    var trigger = triggerMenu.options[triggerMenu.selectedIndex].value;
     var pngDir = "results/run" + run + "/" + dataset + "/Site/PNGS/";
-    if (trigger !== 'All') {
-        pngDir += trigger + '/';
-    }
     var compareRunBox = document.getElementById("compareRun");
     var doCompare = compareRunBox.checked;
     var theHtml = '';
     if (doCompare) {
         var compareRunMenu = document.getElementById("compareRunSelect");
         var compareDatasetMenu = document.getElementById("compareDatasetSelect");
-        var compareTriggerMenu = document.getElementById("compareTriggerSelect");
         var compareRun = compareRunMenu.options[compareRunMenu.selectedIndex].value;
         var compareDataset = compareDatasetMenu.options[compareDatasetMenu.selectedIndex].value;
-        var compareTrigger = compareTriggerMenu.options[compareTriggerMenu.selectedIndex].value;
         var comparePngDir = "results/run" + compareRun + "/" + compareDataset + "/Site/PNGS/";
-        if (compareTrigger !== 'All') {
-            comparePngDir += compareTrigger + '/';
-        }
         var pageHtml = getHtml(pngDir,doCompare,run,dataset);
         var comparePageHtml = getHtml(comparePngDir,doCompare,compareRun,compareDataset);
         theHtml = '<div id="content-window" style="width:98%; margin:1%;">'
